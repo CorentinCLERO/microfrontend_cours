@@ -15,7 +15,55 @@
   \**********************/
 (__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-header/./src/index.js?\n}");
+eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-shell/./src/index.js?\n}");
+
+/***/ },
+
+/***/ "webpack/container/reference/mfeHeader"
+/*!*****************************************************************!*\
+  !*** external "mfeHeader@http://localhost:3001/remoteEntry.js" ***!
+  \*****************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof mfeHeader !== "undefined") return resolve();
+	__webpack_require__.l("http://localhost:3001/remoteEntry.js", (event) => {
+		if(typeof mfeHeader !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "mfeHeader");
+}).then(() => (mfeHeader));
+
+/***/ },
+
+/***/ "webpack/container/reference/mfeLobby"
+/*!****************************************************************!*\
+  !*** external "mfeLobby@http://localhost:3002/remoteEntry.js" ***!
+  \****************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof mfeLobby !== "undefined") return resolve();
+	__webpack_require__.l("http://localhost:3002/remoteEntry.js", (event) => {
+		if(typeof mfeLobby !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "mfeLobby");
+}).then(() => (mfeLobby));
 
 /***/ }
 
@@ -73,6 +121,36 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; (typeof current == 'object' || typeof current == 'function') && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -103,7 +181,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_components_Navbar_jsx":"b3b0346c2023ea081c76","src_bootstrap_jsx":"c92835ae4d508214a893","vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_bootstrap_jsx":"aa8d29478a71e360cb52","vendors-node_modules_react-dom_index_js":"543c05e326794169560a","vendors-node_modules_react_index_js":"9cc8a0d2e69a6b233e32"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -115,7 +193,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "pixelarena-mfe-header:";
+/******/ 		var dataWebpackPrefix = "pixelarena-shell:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -177,6 +255,73 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/remotes loading */
+/******/ 	(() => {
+/******/ 		var chunkMapping = {
+/******/ 			"webpack_container_remote_mfeHeader_Navbar": [
+/******/ 				"webpack/container/remote/mfeHeader/Navbar"
+/******/ 			],
+/******/ 			"webpack_container_remote_mfeLobby_Lobby": [
+/******/ 				"webpack/container/remote/mfeLobby/Lobby"
+/******/ 			]
+/******/ 		};
+/******/ 		var idToExternalAndNameMapping = {
+/******/ 			"webpack/container/remote/mfeHeader/Navbar": [
+/******/ 				"default",
+/******/ 				"./Navbar",
+/******/ 				"webpack/container/reference/mfeHeader"
+/******/ 			],
+/******/ 			"webpack/container/remote/mfeLobby/Lobby": [
+/******/ 				"default",
+/******/ 				"./Lobby",
+/******/ 				"webpack/container/reference/mfeLobby"
+/******/ 			]
+/******/ 		};
+/******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
+/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 				chunkMapping[chunkId].forEach((id) => {
+/******/ 					var getScope = __webpack_require__.R;
+/******/ 					if(!getScope) getScope = [];
+/******/ 					var data = idToExternalAndNameMapping[id];
+/******/ 					if(getScope.indexOf(data) >= 0) return;
+/******/ 					getScope.push(data);
+/******/ 					if(data.p) return promises.push(data.p);
+/******/ 					var onError = (error) => {
+/******/ 						if(!error) error = new Error("Container missing");
+/******/ 						if(typeof error.message === "string")
+/******/ 							error.message += '\nwhile loading "' + data[1] + '" from ' + data[2];
+/******/ 						__webpack_require__.m[id] = () => {
+/******/ 							throw error;
+/******/ 						}
+/******/ 						data.p = 0;
+/******/ 					};
+/******/ 					var handleFunction = (fn, arg1, arg2, d, next, first) => {
+/******/ 						try {
+/******/ 							var promise = fn(arg1, arg2);
+/******/ 							if(promise && promise.then) {
+/******/ 								var p = promise.then((result) => (next(result, d)), onError);
+/******/ 								if(first) promises.push(data.p = p); else return p;
+/******/ 							} else {
+/******/ 								return next(promise, d, first);
+/******/ 							}
+/******/ 						} catch(error) {
+/******/ 							onError(error);
+/******/ 						}
+/******/ 					}
+/******/ 					var onExternal = (external, _, first) => (external ? handleFunction(__webpack_require__.I, data[0], 0, external, onInitialized, first) : onError());
+/******/ 					var onInitialized = (_, external, first) => (handleFunction(external.get, data[1], getScope, 0, onFactory, first));
+/******/ 					var onFactory = (factory) => {
+/******/ 						data.p = 1;
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							module.exports = factory();
+/******/ 						}
+/******/ 					};
+/******/ 					handleFunction(__webpack_require__, data[2], 0, 0, onExternal, 1);
+/******/ 				});
+/******/ 			}
+/******/ 		}
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/sharing */
 /******/ 	(() => {
 /******/ 		__webpack_require__.S = {};
@@ -198,7 +343,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 			var warn = (msg) => {
 /******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 			};
-/******/ 			var uniqueName = "pixelarena-mfe-header";
+/******/ 			var uniqueName = "pixelarena-shell";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -220,6 +365,8 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 				case "default": {
 /******/ 					register("react-dom", "18.3.1", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ./node_modules/react-dom/index.js */ "./node_modules/react-dom/index.js"))))));
 /******/ 					register("react", "18.3.1", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js"))))));
+/******/ 					initExternal("webpack/container/reference/mfeHeader");
+/******/ 					initExternal("webpack/container/reference/mfeLobby");
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -230,7 +377,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "http://localhost:3001/";
+/******/ 		__webpack_require__.p = "http://localhost:3000/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
@@ -423,7 +570,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("webpack_sharing_consume_default_react_react" != chunkId) {
+/******/ 						if(/^(vendors\-node_modules_react(|\-dom)_index_js|main|src_bootstrap_jsx)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -488,7 +635,7 @@ eval("{// Async boundary - necessaire pour Module Federation\nPromise.all(/*! im
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_header"] = self["webpackChunkpixelarena_mfe_header"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_shell"] = self["webpackChunkpixelarena_shell"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

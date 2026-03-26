@@ -1,39 +1,33 @@
-# CP3 — La Résurrection
+# CP4 — La Babel
 
-Télécharge le zip depuis le dossier partagé Teams et extrais-le.
+Télécharge le zip **checkpoint4** depuis Teams.
 
 ```bash
-# Terminal 1
-cd mfe-header && npm install && npm start   # → localhost:3001
-
-# Terminal 2
-cd shell && npm install && npm start        # → localhost:3000
+T1 : cd mfe-header && npm install && npm start   # 3001
+T2 : cd mfe-lobby  && npm install && npm start   # 3002
+T3 : cd shell      && npm install && npm start   # 3000
 ```
 
 ---
 
 ## Mission
 
-### mfe-header/webpack.config.js — 4 TODOs
+Lobby et Header doivent communiquer via l'Event Bus (`shared/eventBus.js`).
 
-```js
-name: 'mfeHeader',
-filename: 'remoteEntry.js',
-exposes: { './Navbar': './src/components/Navbar' },
-shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
-```
+**`mfe-lobby/src/components/Lobby.jsx`**
+→ Quand on rejoint une partie, notifie l'eventBus
 
-### shell/webpack.config.js — 1 TODO
-
-```js
-remotes: {
-  mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
-},
-```
+**`mfe-header/src/components/Navbar.jsx`**
+→ Écoute l'événement et incrémente le badge
+→ Hint : `eventBus.on()` retourne une fonction — utilise-la pour le cleanup React
 
 ---
 
 ## Validation
 
-- http://localhost:3000 affiche le Header chargé depuis le port 3001
-- Push ta branche
+- Cliquer "Rejoindre" → badge notifications +1 dans le Header
+- Console : `[EventBus] game:joined { ... }`
+
+---
+
+📤 Push ta branche

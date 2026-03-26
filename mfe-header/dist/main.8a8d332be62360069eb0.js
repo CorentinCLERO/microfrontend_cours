@@ -6,18 +6,16 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-var mfeHeader;
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "webpack/container/entry/mfeHeader"
-/*!***********************!*\
-  !*** container entry ***!
-  \***********************/
-(__unused_webpack_module, exports, __webpack_require__) {
+/***/ "./src/index.js"
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/Navbar */ \"./src/components/Navbar.jsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://pixelarena-mfe-header/container_entry?\n}");
+eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-header/./src/index.js?\n}");
 
 /***/ }
 
@@ -105,7 +103,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d","src_components_Navbar_jsx":"cf542f99f5b731791039"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_components_Navbar_jsx":"cf542f99f5b731791039","src_bootstrap_jsx":"c400146a01f5051b1ee4","vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -360,12 +358,16 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersion("default", "react", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "./node_modules/react/index.js")))))))
+/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersion("default", "react", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "./node_modules/react/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersion("default", "react-dom", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js")))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"webpack_sharing_consume_default_react_react": [
 /******/ 				"webpack/sharing/consume/default/react/react"
+/******/ 			],
+/******/ 			"src_bootstrap_jsx": [
+/******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
 /******/ 			]
 /******/ 		};
 /******/ 		var startedInstallModules = {};
@@ -409,7 +411,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"mfeHeader": 0
+/******/ 			"main": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -501,8 +503,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/mfeHeader");
-/******/ 	mfeHeader = __webpack_exports__;
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
 /******/ 	
 /******/ })()
 ;

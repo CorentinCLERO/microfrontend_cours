@@ -17,10 +17,9 @@ body {
   flex-direction: column;
 }
 
-.header-loading {
-  padding: 16px 24px;
+.loading-fallback {
+  padding: 20px;
   background: #1a1a2e;
-  border-bottom: 1px solid #2d2d44;
   color: #6c5ce7;
   text-align: center;
   animation: pulse 1.5s infinite;
@@ -33,46 +32,20 @@ body {
 
 .shell-content {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
-.placeholder {
-  background: #1a1a2e;
-  border: 2px dashed #3b82f6;
-  border-radius: 16px;
-  padding: 60px;
-  text-align: center;
-  max-width: 600px;
-}
-
-.placeholder h2 {
-  color: #3b82f6;
-  margin-bottom: 16px;
-  font-size: 28px;
-}
-
-.placeholder p {
-  color: #a0a0b0;
-  margin-bottom: 12px;
-  font-size: 16px;
-}
-
-.placeholder code {
-  background: #2d2d44;
-  padding: 4px 12px;
-  border-radius: 6px;
-  color: #6c5ce7;
-  font-family: 'Fira Code', monospace;
+  padding: 24px;
 }
 
 .shell-footer {
-  padding: 20px;
+  padding: 16px;
   background: #1a1a2e;
   border-top: 1px solid #2d2d44;
   text-align: center;
   color: #64748b;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+.shell-footer .hint {
+  margin-top: 8px;
+  color: #6c5ce7;
+  font-style: italic;
 }

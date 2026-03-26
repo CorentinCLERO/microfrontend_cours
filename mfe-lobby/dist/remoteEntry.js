@@ -6,18 +6,18 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-var mfeHeader;
+var mfeLobby;
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "webpack/container/entry/mfeHeader"
+/***/ "webpack/container/entry/mfeLobby"
 /*!***********************!*\
   !*** container entry ***!
   \***********************/
 (__unused_webpack_module, exports, __webpack_require__) {
 
-eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/Navbar */ \"./src/components/Navbar.jsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://pixelarena-mfe-header/container_entry?\n}");
+eval("{var moduleMap = {\n\t\"./Lobby\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Lobby_jsx\")]).then(() => (() => ((__webpack_require__(/*! ./src/components/Lobby */ \"./src/components/Lobby.jsx\")))));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar name = \"default\"\n\tvar oldScope = __webpack_require__.S[name];\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => (get),\n\tinit: () => (init)\n});\n\n//# sourceURL=webpack://pixelarena-mfe-lobby/container_entry?\n}");
 
 /***/ }
 
@@ -105,7 +105,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d","src_components_Navbar_jsx":"cf542f99f5b731791039"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"vendors-node_modules_react-dom_index_js":"7c6ce781c420e7e9ae3f","vendors-node_modules_react_index_js":"962bcb23c5ac89f24f02","src_components_Lobby_jsx":"5f278060ce2cc249f676"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -117,7 +117,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "pixelarena-mfe-header:";
+/******/ 		var dataWebpackPrefix = "pixelarena-mfe-lobby:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -200,7 +200,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 			var warn = (msg) => {
 /******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 			};
-/******/ 			var uniqueName = "pixelarena-mfe-header";
+/******/ 			var uniqueName = "pixelarena-mfe-lobby";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -232,7 +232,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "http://localhost:3001/";
+/******/ 		__webpack_require__.p = "http://localhost:3002/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
@@ -409,7 +409,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"mfeHeader": 0
+/******/ 			"mfeLobby": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -486,7 +486,7 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_header"] = self["webpackChunkpixelarena_mfe_header"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_lobby"] = self["webpackChunkpixelarena_mfe_lobby"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -501,8 +501,8 @@ eval("{var moduleMap = {\n\t\"./Navbar\": () => {\n\t\treturn Promise.all([__web
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/mfeHeader");
-/******/ 	mfeHeader = __webpack_exports__;
+/******/ 	var __webpack_exports__ = __webpack_require__("webpack/container/entry/mfeLobby");
+/******/ 	mfeLobby = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
