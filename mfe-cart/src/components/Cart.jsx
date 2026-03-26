@@ -7,18 +7,16 @@ function Cart() {
 
   useEffect(() => {
     const unsubscribe = eventBus.on('cart:add', (product) => {
-      setItems((prev) => [...prev, { ...product, cartId: Date.now() + Math.random() }]);
+      setItems(prev => [...prev, { ...product, cartId: Date.now() }]);
     });
-
-    return unsubscribe;
+    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
-    const itemCount = items.length;
-    const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
-
-    console.log('🛒 Cart updated:', { itemCount, totalPrice });
-    eventBus.emit('cart:updated', { itemCount, totalPrice });
+    eventBus.emit('cart:updated', {
+      count: items.length,
+      total: items.reduce((sum, item) => sum + item.price, 0),
+    });
   }, [items]);
 
   const handleRemove = (cartId) => {

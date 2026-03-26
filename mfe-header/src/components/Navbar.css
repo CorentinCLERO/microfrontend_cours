@@ -60,9 +60,22 @@
   background: #2563eb;
 }
 
-.notification-btn {
+.notification-btn,
+.cart-btn {
   position: relative;
   padding: 10px 16px;
+}
+
+.cart-btn {
+  background: #f59e0b;
+}
+
+.cart-btn:hover {
+  background: #d97706;
+}
+
+.cart-badge {
+  background: #ef4444;
 }
 
 .badge {
