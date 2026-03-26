@@ -1,32 +1,38 @@
-# CP4 — La Babel
+# CP5 — Le Catalogue
 
-Télécharge le zip **checkpoint4** depuis Teams.
+Télécharge le zip **checkpoint5** depuis Teams.
 
 ```bash
-T1 : cd mfe-header && npm install && npm start   # 3001
-T2 : cd mfe-lobby  && npm install && npm start   # 3002
-T3 : cd shell      && npm install && npm start   # 3000
+T1 : cd mfe-catalog && npm install && npm start  # 3003
+T2 : cd mfe-header  && npm install && npm start  # 3001
+T3 : cd mfe-lobby   && npm install && npm start  # 3002
+T4 : cd shell       && npm install && npm start  # 3000
 ```
 
 ---
 
 ## Mission
 
-Lobby et Header doivent communiquer via l'Event Bus (`shared/eventBus.js`).
+Créer `mfe-catalog` de A à Z et le brancher sur le Shell.
 
-**`mfe-lobby/src/components/Lobby.jsx`**
-→ Quand on rejoint une partie, notifie l'eventBus
+**`mfe-catalog/webpack.config.js`**
+→ 4 TODOs : configurer Module Federation (name, filename, exposes, shared)
 
-**`mfe-header/src/components/Navbar.jsx`**
-→ Écoute l'événement et incrémente le badge
-→ Hint : `eventBus.on()` retourne une fonction — utilise-la pour le cleanup React
+**`mfe-catalog/src/components/Catalog.jsx`**
+→ Notifier l'eventBus quand l'utilisateur ajoute un produit
+
+**`shell/webpack.config.js`**
+→ Déclarer `mfe-catalog` comme remote (port 3003)
+
+**`shell/src/App.jsx`**
+→ Importer et afficher le Catalog
 
 ---
 
 ## Validation
 
-- Cliquer "Rejoindre" → badge notifications +1 dans le Header
-- Console : `[EventBus] game:joined { ... }`
+- `localhost:3000` → 6 produits s'affichent dans la Boutique
+- Console : `[EventBus] cart:add { id, name, price }` au clic sur "Ajouter"
 
 ---
 

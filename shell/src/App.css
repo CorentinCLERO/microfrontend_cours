@@ -35,6 +35,21 @@ body {
   padding: 24px;
 }
 
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #2d2d44;
+}
+
 .shell-footer {
   padding: 16px;
   background: #1a1a2e;
@@ -42,10 +57,4 @@ body {
   text-align: center;
   color: #64748b;
   font-size: 13px;
-}
-
-.shell-footer .hint {
-  margin-top: 8px;
-  color: #6c5ce7;
-  font-style: italic;
 }
