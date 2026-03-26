@@ -1,23 +1,15 @@
-import React, { useState, useEffect } from "react";
-import eventBus from "shared/eventBus";
-import "./Navbar.css";
+import React, { useState, useEffect } from 'react';
+import eventBus from 'shared/eventBus';
+import './Navbar.css';
 
 function Navbar() {
   const [notifications, setNotifications] = useState(0);
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
-    // TODO: ecouter les evenements du Lobby et du Cart pour mettre a jour les badges
-    // Penser au cleanup
-    const unsub1 = eventBus.on("game:joined", () => {
-      setNotifications((prev) => prev + 1);
-    });
-    const unsub2 = eventBus.on("cart:updated", ({ count, total }) => {
-      setCartCount(count);
-    });
-    return () => {
-      (unsub1(), unsub2());
-    };
+    const unsub1 = eventBus.on('game:joined', () => setNotifications(n => n + 1));
+    const unsub2 = eventBus.on('cart:updated', ({ count }) => setCartCount(count));
+    return () => { unsub1(); unsub2(); };
   }, []);
 
   return (
@@ -38,9 +30,7 @@ function Navbar() {
         {/* Icone Panier */}
         <button className="nav-button cart-btn">
           🛒
-          {cartCount > 0 && (
-            <span className="badge cart-badge">{cartCount}</span>
-          )}
+          {cartCount > 0 && <span className="badge cart-badge">{cartCount}</span>}
         </button>
 
         {/* Icone Notifications */}

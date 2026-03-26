@@ -1,6 +1,12 @@
-# CP7 — L'Assemblage Final
+# CP8 — Le Crash
 
-Télécharge le zip depuis le dossier partagé Teams et extrais-le.
+> ⏱ 20 min — Compétences couvertes : C17
+
+Télécharge le zip **checkpoint8** depuis Teams.
+
+---
+
+## Lancer (5 terminaux)
 
 ```bash
 T1 : cd mfe-header  && npm install && npm start   # 3001
@@ -14,19 +20,22 @@ T5 : cd shell       && npm install && npm start   # 3000
 
 ## Mission
 
-`mfe-header/src/components/Navbar.jsx` — 1 `useEffect`, 3 TODOs :
+L'app est cassée. **3 bugs à trouver et corriger.**
 
-**TODO 1** — s'abonner à `game:joined` et incrémenter le badge notifications
+Ouvre `localhost:3000` et observe ce qui ne s'affiche pas correctement.
+Ouvre la console du navigateur (F12) et lis les erreurs.
 
-**TODO 2** — s'abonner à `cart:updated` et mettre à jour le badge panier avec le `count`
-
-**TODO 3** — retourner le cleanup des 2 abonnements
+Les 3 bugs se trouvent dans des fichiers `webpack.config.js` :
+- 1 bug dans `shell/webpack.config.js`
+- 1 bug dans `mfe-header/webpack.config.js`
+- 1 bug dans `mfe-catalog/webpack.config.js`
 
 ---
 
 ## Validation
 
-- Rejoindre une partie → badge 🔔 +1
-- Ajouter au panier → badge 🛒 +1
-- Vider le panier → badge 🛒 = 0
-- Push ta branche
+`localhost:3000` affiche les 4 MFEs sans erreur console.
+
+---
+
+📤 Push ta branche
