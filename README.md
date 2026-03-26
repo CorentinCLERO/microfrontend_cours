@@ -1,8 +1,8 @@
-# CP8 — Le Crash
+# CP9 — La Résilience
 
-> ⏱ 20 min — Compétences couvertes : C17
+> ⏱ 15 min — Compétences couvertes : C3, C14
 
-Télécharge le zip **checkpoint8** depuis Teams.
+Télécharge le zip **checkpoint9** depuis Teams.
 
 ---
 
@@ -20,21 +20,24 @@ T5 : cd shell       && npm install && npm start   # 3000
 
 ## Mission
 
-L'app est cassée. **3 bugs à trouver et corriger.**
+Tout fonctionne. Maintenant **tue des services** et observe.
 
-Ouvre `localhost:3000` et observe ce qui ne s'affiche pas correctement.
-Ouvre la console du navigateur (F12) et lis les erreurs.
+**Étape 1** : Dans le terminal du Lobby (T2), appuie sur `Ctrl+C`
+→ Observe `localhost:3000`. Que se passe-t-il ?
 
-Les 3 bugs se trouvent dans des fichiers `webpack.config.js` :
-- 1 bug dans `shell/webpack.config.js`
-- 1 bug dans `mfe-header/webpack.config.js`
-- 1 bug dans `mfe-catalog/webpack.config.js`
+**Étape 2** : Relance le Lobby (`npm start`)
+→ Il revient sans redémarrer les autres.
+
+**Étape 3** : Tue le Catalog (T3), puis le Cart (T4)
+→ Les autres MFEs restent-ils affectés ?
+
+**Étape 4** : Prépare ta réponse — pourquoi un MFE cassé n'arrête pas les autres ?
 
 ---
 
 ## Validation
 
-`localhost:3000` affiche les 4 MFEs sans erreur console.
+Tu peux expliquer pourquoi un MFE qui crash n'arrête pas les autres.
 
 ---
 
