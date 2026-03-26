@@ -43,6 +43,14 @@ body {
   margin: 0 auto;
 }
 
+.content-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .section {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 16px;

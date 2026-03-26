@@ -1,39 +1,32 @@
-# CP5 — Le Catalogue
+# CP6 — Le Panier
 
-Télécharge le zip **checkpoint5** depuis Teams.
+Télécharge le zip **checkpoint6** depuis Teams.
 
 ```bash
-T1 : cd mfe-catalog && npm install && npm start  # 3003
-T2 : cd mfe-header  && npm install && npm start  # 3001
-T3 : cd mfe-lobby   && npm install && npm start  # 3002
-T4 : cd shell       && npm install && npm start  # 3000
+T1 : cd mfe-header  && npm install && npm start  # 3001
+T2 : cd mfe-lobby   && npm install && npm start  # 3002
+T3 : cd mfe-catalog && npm install && npm start  # 3003
+T4 : cd mfe-cart    && npm install && npm start  # 3004
+T5 : cd shell       && npm install && npm start  # 3000
 ```
 
 ---
 
 ## Mission
 
-Créer `mfe-catalog` de A à Z et le brancher sur le Shell.
+`mfe-cart/src/components/Cart.jsx` — 2 useEffects à compléter.
 
-**`mfe-catalog/webpack.config.js`**
-→ 4 TODOs : configurer Module Federation (name, filename, exposes, shared)
+**useEffect 1 — écoute**
+→ Abonne-toi à `cart:add` et ajoute chaque produit reçu au state `items`
 
-**`mfe-catalog/src/components/Catalog.jsx`**
-→ Notifier l'eventBus quand l'utilisateur ajoute un produit
-
-**`shell/webpack.config.js`**
-→ Déclarer `mfe-catalog` comme remote (port 3003)
-
-**`shell/src/App.jsx`**
-→ Importer et afficher le Catalog
+**useEffect 2 — émission**
+→ Quand `items` change, notifie l'eventBus que le panier a changé
+→ L'événement doit contenir le nombre d'articles et le total
 
 ---
 
 ## Validation
 
-- `localhost:3000` → 6 produits s'affichent dans la Boutique
-- Console : `[EventBus] cart:add { id, name, price }` au clic sur "Ajouter"
-
----
-
-📤 Push ta branche
+- Cliquer "Ajouter" dans Catalog → item apparaît dans Cart
+- Console : `[EventBus] cart:updated` visible à chaque ajout
+- Push ta branche
