@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Lobby from './components/Lobby';
-import Leaderboard from './components/Leaderboard';
+import React from 'react';
 import './App.css';
 
 function App() {
-  const [notifications, setNotifications] = useState(0);
-
-  const handleJoinGame = (gameName) => {
-    setNotifications(prev => prev + 1);
-    alert(`Vous avez rejoint : ${gameName}`);
-  };
-
   return (
-    <div className="app">
-      <Navbar notifications={notifications} />
-      <main className="main-content">
-        <Lobby onJoinGame={handleJoinGame} />
-        <Leaderboard />
+    <div className="shell">
+      <header className="shell-header">
+        <h1>PixelArena</h1>
+        <p>Shell operationnel</p>
+      </header>
+
+      <main className="shell-content">
+        <div className="placeholder">
+          <p>Les Micro-Frontends seront charges ici</p>
+        </div>
       </main>
+
+      <footer className="shell-footer">
+        <p>Module Federation actif sur le port 3000</p>
+      </footer>
     </div>
   );
 }

@@ -1,17 +1,22 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
+    publicPath: "http://localhost:3000/",
     clean: true,
   },
   devServer: {
     port: 3000,
     hot: true,
-    open: true,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
   module: {
     rules: [
@@ -19,24 +24,37 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      // TODO 1: Donner un nom au Shell
+      name: "coco",
+
+      // TODO 2: Configurer les remotes (vide pour l'instant)
+      remotes: {},
+
+      // TODO 3: Configurer les dependances partagees
+      shared: {
+        react: { singleton: true, requiredVersion: "^18.2.0" },
+        "react-dom": { singleton: true, requiredVersion: "^18.2.0" },
+      },
+    }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
   ],
 };

@@ -1,7 +1,6 @@
 {
-  "name": "pixelarena-legacy",
+  "name": "pixelarena-shell",
   "version": "1.0.0",
-  "description": "PixelArena - Monolithe Legacy (Checkpoint 1)",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production"
