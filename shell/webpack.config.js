@@ -1,13 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3000/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
+    publicPath: "http://localhost:3000/",
     clean: true,
   },
   devServer: {
@@ -15,7 +15,7 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     },
   },
   module: {
@@ -24,40 +24,40 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
     alias: {
-      shared: path.resolve(__dirname, '../shared'),
+      shared: path.resolve(__dirname, "../shared"),
     },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shell',
+      name: "shell",
       remotes: {
-        mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
-        mfeLobby: 'mfeLobby@http://localhost:3005/remoteEntry.js',
-        mfeCatalog: 'mfeCatalog@http://localhost:3003/remoteEntry.js',
-        mfeCart: 'mfeCart@http://localhost:3004/remoteEntry.js',
+        mfeHeader: "mfeHeader@http://localhost:3001/remoteEntry.js",
+        mfeLobby: "mfeLobby@http://localhost:3002/remoteEntry.js",
+        mfeCatalog: "mfeCatalog@http://localhost:3003/remoteEntry.js",
+        mfeCart: "mfeCart@http://localhost:3004/remoteEntry.js",
       },
       shared: {
-        react: { singleton: true, requiredVersion: '^18.2.0' },
-        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
+        react: { singleton: true, requiredVersion: "^18.2.0" },
+        "react-dom": { singleton: true, requiredVersion: "^18.2.0" },
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
   ],
 };

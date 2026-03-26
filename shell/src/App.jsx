@@ -1,17 +1,13 @@
-import React, { Suspense, lazy } from 'react';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import "./App.css";
 
-const Header = lazy(() => import('mfeHeader/Navbar'));
-const Lobby = lazy(() => import('mfeLobby/Lobby'));
-const Catalog = lazy(() => import('mfeCatalog/Catalog'));
-const Cart = lazy(() => import('mfeCart/Cart'));
+const Header = lazy(() => import("mfeHeader/Navbar"));
+const Lobby = lazy(() => import("mfeLobby/Lobby"));
+const Catalog = lazy(() => import("mfeCatalog/Catalog"));
+const Cart = lazy(() => import("mfeCart/Cart"));
 
 function LoadingFallback({ name }) {
-  return (
-    <div className="loading-fallback">
-      Chargement {name}...
-    </div>
-  );
+  return <div className="loading-fallback">Chargement {name}...</div>;
 }
 
 function App() {
@@ -44,7 +40,10 @@ function App() {
       </main>
 
       <footer className="shell-footer">
-        <p>Shell (3000) | Header (3001) | Lobby (3002) | Catalog (3003) | Cart (3004)</p>
+        <p>
+          Shell (3000) | Header (3001) | Lobby (3002) | Catalog (3003) | Cart
+          (3004)
+        </p>
       </footer>
     </div>
   );

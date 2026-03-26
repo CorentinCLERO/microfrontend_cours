@@ -1,13 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:3001/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
+    publicPath: "http://localhost:3001/",
     clean: true,
   },
   devServer: {
@@ -15,7 +15,7 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     },
   },
   module: {
@@ -24,38 +24,38 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
     alias: {
-      shared: path.resolve(__dirname, '../shared'),
+      shared: path.resolve(__dirname, "../shared"),
     },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'mfeHeader',
-      filename: 'remoteEntry.js',
+      name: "mfeHeader",
+      filename: "remoteEntry.js",
       exposes: {
-        './Navbar': './src/components/Navbar',
+        "./Navbar": "./src/components/Navbar",
       },
       shared: {
-        react: { singleton: false, requiredVersion: '^18.2.0' },
-        'react-dom': { singleton: false, requiredVersion: '^18.2.0' },
+        react: { singleton: true, requiredVersion: "^18.2.0" },
+        "react-dom": { singleton: true, requiredVersion: "^18.2.0" },
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
   ],
 };
