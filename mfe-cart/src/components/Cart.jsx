@@ -17,6 +17,7 @@ function Cart() {
     const itemCount = items.length;
     const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
 
+    console.log('🛒 Cart updated:', { itemCount, totalPrice });
     eventBus.emit('cart:updated', { itemCount, totalPrice });
   }, [items]);
 
