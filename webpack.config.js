@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
-    publicPath: "http://localhost:3000/",
+    publicPath: "auto",
     clean: true,
   },
   devServer: {
@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       // TODO 1: Donner un nom au Shell
-      name: "coco",
+      name: "name",
 
       // TODO 2: Configurer les remotes (vide pour l'instant)
       remotes: {},
