@@ -1,33 +1,33 @@
-# CP2 — Le Shell
+# CP3 — La Résurrection
 
 Télécharge le zip depuis le dossier partagé Teams et extrais-le.
 
 ```bash
-npm install
-npm start
+# Terminal 1
+cd mfe-header && npm install && npm start   # → localhost:3001
+
+# Terminal 2
+cd shell && npm install && npm start        # → localhost:3000
 ```
 
 ---
 
 ## Mission
 
-Ouvrir `webpack.config.js` et compléter les 3 TODOs :
+### mfe-header/webpack.config.js — 4 TODOs
 
-**TODO 1 — Nommer le Shell**
 ```js
-name: 'shell',
+name: 'mfeHeader',
+filename: 'remoteEntry.js',
+exposes: { './Navbar': './src/components/Navbar' },
+shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
 ```
 
-**TODO 2 — Préparer les remotes**
-```js
-remotes: {},
-```
+### shell/webpack.config.js — 1 TODO
 
-**TODO 3 — Partager React**
 ```js
-shared: {
-  react: { singleton: true, requiredVersion: '^18.2.0' },
-  'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
+remotes: {
+  mfeHeader: 'mfeHeader@http://localhost:3001/remoteEntry.js',
 },
 ```
 
@@ -35,6 +35,5 @@ shared: {
 
 ## Validation
 
-- `npm start` démarre sans erreur
-- http://localhost:3000 affiche "Shell opérationnel"
-- Push sur `checkpoint2-[nom-equipe]`
+- http://localhost:3000 affiche le Header chargé depuis le port 3001
+- Push ta branche
